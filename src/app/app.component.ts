@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'solar-analytics';
+  // for now there is no theme switcher, define here which theme you want
+  themeClass: string = 'dark-theme';
+
 }
