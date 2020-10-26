@@ -1,0 +1,15 @@
+
+<div class="content">
+  <mat-card class="mat-elevation-z4" [routerLink]="['/country-details',country.alpha2Code]">
+    <div style="height: 160px;"><img mat-card-image src="{{country.flag}}" layout-fill/></div>
+    
+    <mat-card-content >
+      <h2 class="md-display-1">{{country.name}}</h2>
+      <p>Region : {{country.region}} </p>
+      <p>Capital :{{country.capital}}</p>
+      <p>Population :{{country.population}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+  </mat-card>
+</div>

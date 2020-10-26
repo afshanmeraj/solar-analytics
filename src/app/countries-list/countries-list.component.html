@@ -1,0 +1,23 @@
+<div class ="container">
+  <div class="filters">
+  <mat-form-field appearance="fill">
+    <input matInput name="filter" [formControl]="filter" placeholder="Filter countries" >
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Select</mat-label>
+    <mat-select matSelect name="region" [formControl]="region">
+      <mat-option value="Asia">Asia</mat-option>
+      <mat-option value="Americas">Americas</mat-option>
+      <mat-option value="Africa">Africa</mat-option>
+      <mat-option value="Oceania">Oceania</mat-option>
+    </mat-select>
+  </mat-form-field>
+    
+</div>
+    <div class="grid-row">
+      <div  *ngFor="let country of filteredCountries$ | async">
+          <app-country-card [country]="country" ></app-country-card>
+      </div>
+    </div>
+</div>
+

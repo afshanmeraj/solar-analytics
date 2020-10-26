@@ -1,0 +1,59 @@
+<div class="main">
+  <button mat-stroked-button [routerLink]="['']">Back</button>
+
+
+  <div class="content" *ngIf="country$ | async as country; ">
+    <div class="flag">
+      <img  src="{{country.flag}}" layout-fill/>
+    </div>
+    <div class="country-details">
+      <h2 class="md-display-1">{{country.name}}</h2>
+          <div class="details-container">
+            <div class="detail"> 
+              <div class="title">Native Name </div>
+              <div>{{country.nativeName}}</div>
+            </div>
+
+            <div class="detail"> 
+              <div class="title"> Top level Domain</div>
+              <div>{{country.topLevelDomain}}</div>
+            </div>
+
+            <div class="detail"> 
+              <div class="title">Population </div>
+              <div>{{country.population}}</div>
+            </div>
+
+            <div class="detail" > 
+              <div class="title">Currency </div>
+              <div *ngFor="let currency of country.currencies">
+                <span>{{currency.code}}</span>
+              </div>
+            </div>
+
+            <div class="detail"> 
+              <div class="title">Region</div>
+              <div>{{country.region}}</div>
+            </div>
+
+            <div class="detail"> 
+              <div class="title">Subregion</div>
+              <div>{{country.subregion}}</div>
+            </div>
+        
+          <div class="detail" > 
+            <div class="title">Languages </div>
+            <div *ngFor="let language of country.languages">
+              <span>{{language.name}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail" >
+          <div class="title">Border Countries</div>
+          <div *ngFor="let border of country.borders">
+            <button (click)="getCountryDetails(border)"  mat-stroked-button>{{border}}</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
